@@ -1,0 +1,68 @@
+$md: 768px;
+$lg: 1024px;
+
+.product_advantages_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10rem;
+  padding-block: 10rem;
+  padding-inline: 2rem;
+
+  article {
+    & > div {
+      width: 15rem;
+
+      @media screen and (min-width: $md) {
+        width: 20rem;
+      }
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      color: var(--tertiary);
+    }
+
+    p {
+      padding-top: 3.5rem;
+      text-align: center;
+    }
+
+    img {
+      display: none;
+    }
+
+    @media screen and (min-width: $lg) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+
+      & > div {
+        width: 30rem;
+      }
+
+      &:nth-child(2) {
+        flex-direction: row-reverse;
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
+
+      p {
+        font-size: 1.25rem;
+        line-height: 30px;
+      }
+
+      img {
+        display: block;
+        border-radius: 10px;
+      }
+    }
+  }
+  .opacity_0 {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,74 @@
+$lg: 1024px;
+
+.company_explanation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10rem;
+  margin-block: 10rem;
+
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    width: min(20rem, 100%);
+
+    h1 {
+      font-size: 2rem;
+      text-align: center;
+      color: var(--tertiary);
+    }
+
+    p {
+      width: 16rem;
+      text-align: center;
+    }
+
+    img {
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    &:first-child > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5rem;
+    }
+
+    @media screen and (min-width: $lg) {
+      width: 35rem;
+      gap: 5rem;
+
+      &:first-child {
+        & > div {
+          flex-direction: row;
+
+          img {
+            width: 32rem;
+            height: 20rem;
+          }
+
+          p {
+            text-align: left;
+          }
+        }
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
+
+      p {
+        width: 22rem;
+        font-size: 1.25rem;
+        line-height: 30px;
+      }
+    }
+  }
+  .opacity_0 {
+    opacity: 0;
+  }
+}

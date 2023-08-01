@@ -1,0 +1,85 @@
+$lg: 1024px;
+
+.product_snippet {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 30rem;
+  padding-block: 2rem;
+
+  h1 {
+    color: var(--tertiary);
+    font-size: 2rem;
+  }
+
+  a {
+    color: var(--white);
+    padding: 10px 20px;
+    background-color: var(--primary);
+    border-radius: 5px;
+    text-decoration: none;
+
+    &:hover {
+      background-color: var(--tertiary);
+    }
+  }
+
+  .product_container {
+    overflow-x: scroll;
+    touch-action: pan-x;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    & > div {
+      display: flex;
+      gap: 35px;
+      width: min(100vw, 70rem);
+      padding-inline-start: 1.25rem;
+
+      & > div:last-child {
+        padding-inline-end: 1.25rem;
+      }
+
+      .slide_in_up {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      & > div {
+        opacity: 0;
+        transform: translateY(10rem);
+        @for $i from 1 through 6 {
+          &:nth-child(#{$i}) {
+            transition: transform 1s, opacity 1s;
+            transition-delay: calc($i * 100ms);
+          }
+        }
+
+        img {
+          object-fit: cover;
+          border-radius: 10px;
+          margin-bottom: 10px;
+        }
+
+        span {
+          font-size: 16px;
+          font-weight: 500;
+          color: var(--tertiary);
+
+          @media screen and (min-width: $lg) {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $lg) {
+    h1 {
+      font-size: 3rem;
+    }
+  }
+}
