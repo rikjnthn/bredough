@@ -23,7 +23,6 @@ const CompanyExplanation = () => {
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
-    console.log(isIntersecting);
     return () => observer.disconnect();
   }, [isIntersecting]);
 
